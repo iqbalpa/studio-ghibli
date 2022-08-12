@@ -7,19 +7,20 @@ const Main = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        const fetchFilms = async () => {
+        const fetchAllFilms = async () => {
             try {
                 setLoading(true);
-                setError(false);
                 const films = await API.fetchAllFilms();
                 setData(films);
+                console.log(data);
                 setLoading(false);
             } catch (error) {
                 setError(true);
             }
         }
-    });
-    console.log(data);
+
+        fetchAllFilms();
+    }, []);
 
     return (
         <div>
@@ -28,7 +29,7 @@ const Main = () => {
                 : <p>not error</p>
             }
             { data  
-                ? <p>{data}</p>
+                ? <p>{data[0].title}</p>
                 : <p>failed to fetch the data</p>
             }
         </div>
