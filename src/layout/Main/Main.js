@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../api/api";
+import Card from "../../components/Card/Card";
 
 const Main = () => {
     const [data, setData] = useState(null);
@@ -23,15 +24,14 @@ const Main = () => {
     }, []);
 
     return (
-        <div>
-            { error 
-                ? <div>Something went wrong...</div>  
-                : <p>not error</p>
-            }
-            { data  
-                ? <p>{data[0].title}</p>
-                : <p>failed to fetch the data</p>
-            }
+        <div className="flex justify-center">
+            <div className="mt-7 grid grid-cols-4 gap-10 justify-around">
+                {data && 
+                    data.map(film => (
+                        <Card key={film.id} {...film} />
+                    ))
+                }
+            </div>
         </div>
     )
 }
