@@ -24,14 +24,12 @@ const Main = () => {
     }, []);
 
     return (
-        <div className="mt-7 mb-10 flex justify-center">
-            <div className="flex justify-center flex-wrap">
-                {data && 
-                    data.map(film => (
-                        <Card key={film.id} {...film} />
-                    ))
-                }
-            </div>
+        <div className="my-6 flex justify-center flex-wrap">
+            {data && 
+                data.map(film => (
+                    <Card key={film.id} {...film} />
+                ))
+            }
         </div>
     )
 }
