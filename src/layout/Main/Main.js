@@ -24,8 +24,8 @@ const Main = () => {
     }, []);
 
     return (
-        <div className="flex justify-center">
-            <div className="mt-7 grid grid-cols-4 gap-10 justify-around">
+        <div className="mt-7 mb-10 flex justify-center">
+            <div className="flex justify-center flex-wrap">
                 {data && 
                     data.map(film => (
                         <Card key={film.id} {...film} />
