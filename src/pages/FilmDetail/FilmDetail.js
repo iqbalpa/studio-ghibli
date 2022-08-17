@@ -22,17 +22,47 @@ const FilmDetail = () => {
     return (
         <>
             { data && 
-                <div>
-                    <img src={data.movie_banner} alt={data.title} />
-                    <p>{data.title}</p>   
-                    <p>{data.original_title}</p>  
-                    <p>{data.original_title_romanised}</p>  
-                    <p>{data.director}</p>  
-                    <p>{data.producer}</p>  
-                    <p>{data.release_date}</p>  
-                    <p>{data.running_time}</p>
-                    <p>{data.rt_score}</p>
-                    <p>{data.description}</p>  
+                <div className="flex flex-col justify-center items-center">
+                    <img src={data.movie_banner} alt={data.title} className="w-[35rem] mt-10 mb-5 rounded-xl hover:scale-110 hover:cursor-pointer duration-200" />
+                    
+                    <div className="bg-red-400 mt-3 mb-10 w-[40rem] flex flex-col justify-center items-center rounded-lg">
+                        <div className="px-3 pt-3 w-full flex flex-row justify-between hover:bg-red-700 hover:rounded-t-lg">
+                            <p>Title : </p>
+                            <p>{data.title}</p>
+                        </div>   
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Original Title : </p>
+                            <p>{data.original_title}</p> 
+                        </div> 
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Original Title Romanised : </p>
+                            <p>{data.original_title_romanised}</p> 
+                        </div> 
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Director : </p>
+                            <p>{data.director}</p>
+                        </div>  
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Producer : </p>
+                            <p>{data.producer}</p>  
+                        </div>
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Release Date : </p>
+                            <p>{data.release_date}</p>
+                        </div>
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Running Time : </p>
+                            <p>{data.running_time} Minutes</p>
+                        </div>
+                        <div className="px-3 w-full flex flex-row justify-between hover:bg-red-700">
+                            <p>Rotten Tomatoes : </p>
+                            <p>{data.rt_score}</p>
+                        </div>
+                        <div className="px-3 pb-5 w-full flex flex-col hover:bg-red-700 hover:rounded-b-lg">
+                            <p>Description : </p>
+                            <p className="text-justify indent-12">{data.description}</p>
+                        </div>
+                    </div> 
                 </div>
             }
         </>
