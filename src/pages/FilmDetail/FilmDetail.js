@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import API from "../../api/api";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const FilmDetail = () => {
     const [data, setData] = useState(null);
@@ -65,6 +67,11 @@ const FilmDetail = () => {
                     </div> 
                 </div>
             }
+            <Link to="/">
+                <div className="absolute top-5 left-5 bg-gray-300 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-500">
+                    <IoIosArrowBack />
+                </div>
+            </Link>
         </>
     )
 }
