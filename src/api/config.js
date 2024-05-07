@@ -1,1 +1,1 @@
-export const BASE_URL = "https://ghibliapi.herokuapp.com";
+export const BASE_URL = "https://ghibliapi.vercel.app";
